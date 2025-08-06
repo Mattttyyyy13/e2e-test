@@ -20,11 +20,12 @@ jobs:
           distribution: 'temurin'
 
       # Install dependencies
-      - run: npm ci # ✅ Clean install
-      - run: npx playwright install --with-deps # ✅ Browser setup
-      # - run: npm install allure-playwright  # Explicitly install allure
+      - name: Install dependencies
+        run: npm ci # ✅ Clean install 
 
-      
+      - name: Install Allure CLI globally 
+        run: npm install -g allure-commandline --save-dev # ✅ Corrected official Java-based Allure CLI from Qameta. (do not use npx)
+
       # Run tests (root config handles projects) with masked secrets
       - name: Run Playwright tests
         env:
@@ -43,7 +44,7 @@ jobs:
         #   mv allure-report allure-report-temp
         #   mv allure-report-temp ./allure-report
         run: |
-          npx allure generate allure-results --clean -o allure-report
+          allure generate allure-results --clean -o allure-report
 
 
       # - name: Upload Allure report
@@ -61,7 +62,7 @@ jobs:
           echo "Allure report:"
           ls -la ./allure-report
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy Allure Report to GitHub Pages
         if: always() # ✅ Critical for showing failed tests
         uses: peaceiris/actions-gh-pages@v3
         with:
