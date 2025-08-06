@@ -26,9 +26,9 @@ jobs:
       # Run tests (root config handles projects) with masked secrets
       - name: Run Playwright tests
         env:
-          USERNAME: ${{ secrets.FIRST_USERNAME }}
-          PASSWORD: ${{ secrets.FIRST_PASSWORD }}
-          LOGIN_URL: ${{ secrets.FIRST_LOGIN_URL }}
+          FIRST_USERNAME: ${{ secrets.FIRST_USERNAME }}
+          FIRST_PASSWORD: ${{ secrets.FIRST_PASSWORD }}
+          FIRST_LOGIN_URL: ${{ secrets.FIRST_LOGIN_URL }}
         run: |
           echo "::add-mask::${{ secrets.FIRST_USERNAME }}"
           echo "::add-mask::${{ secrets.FIRST_PASSWORD }}"
