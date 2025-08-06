@@ -3,6 +3,10 @@
   "compilerOptions": {
     // File Layout
     // "rootDir": "./src",
+    "baseUrl": ".", // base path for resolving modules
+    "paths": {
+      "@utils/*": ["utils/*"] // alias @utils of the utils folder
+    },
     "outDir": "./dist", // for playwright
 
     // Environment Settings
