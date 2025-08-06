@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","4","get started link","skulibrary-chromium","Wed Aug 06 09:56:39 UTC 2025","failed","Wed Aug 06 09:56:39 UTC 2025","","skulibrary/tests/a-sanity-check.spec.ts","",""
+"","4","Login - Fail","skulibrary-chromium","Wed Aug 06 09:56:40 UTC 2025","failed","Wed Aug 06 09:56:40 UTC 2025","","skulibrary/tests/b-login.spec.ts","",""
+"","4","Login - Success","skulibrary-chromium","Wed Aug 06 09:56:40 UTC 2025","failed","Wed Aug 06 09:56:40 UTC 2025","","skulibrary/tests/b-login.spec.ts","",""
+"","4","has title","skulibrary-chromium","Wed Aug 06 09:56:39 UTC 2025","failed","Wed Aug 06 09:56:39 UTC 2025","","skulibrary/tests/a-sanity-check.spec.ts","",""
