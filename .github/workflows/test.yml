@@ -22,8 +22,9 @@ jobs:
       # Install dependencies
       - run: npm ci # ✅ Clean install
       - run: npx playwright install --with-deps # ✅ Browser setup
-      - run: npm install allure-playwright  # Explicitly install allure
+      # - run: npm install allure-playwright  # Explicitly install allure
 
+      
       # Run tests (root config handles projects) with masked secrets
       - name: Run Playwright tests
         env:
@@ -37,17 +38,20 @@ jobs:
 
       - name: Generate Allure report
         if: always() # ✅ Runs even if tests fail
+        # run: |
+        #   npx allure generate ./allure-results --clean
+        #   mv allure-report allure-report-temp
+        #   mv allure-report-temp ./allure-report
         run: |
-          npx allure generate ./allure-results --clean
-          mv allure-report allure-report-temp
-          mv allure-report-temp ./allure-report
+          npx allure generate allure-results --clean -o allure-report
 
-      - name: Upload Allure report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-report
-          path: ./allure-report/
+
+      # - name: Upload Allure report
+      #   if: always()
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: allure-report
+      #     path: ./allure-report/
 
       - name: Verify Allure results
         if: always() # ✅ Verifies if Allure results and reports were there
@@ -64,4 +68,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }} # ✅ Correct automatic token
           publish_dir: ./allure-report
           keep_files: true # ✅ Preserves history
-          force_orphan: true  # Force clean deployment for first time
+          # force_orphan: true  # Force clean deployment for first time
