@@ -26,12 +26,12 @@ jobs:
       # Run tests (root config handles projects) with masked secrets
       - name: Run Playwright tests
         env:
-          USERNAME: ${{ secrets.USERNAME }}
-          PASSWORD: ${{ secrets.PASSWORD }}
-          LOGIN_URL: ${{ secrets.LOGIN_URL }}
+          USERNAME: ${{ secrets.FIRST_USERNAME }}
+          PASSWORD: ${{ secrets.FIRST_PASSWORD }}
+          LOGIN_URL: ${{ secrets.FIRST_LOGIN_URL }}
         run: |
-          echo "::add-mask::${{ secrets.USERNAME }}"
-          echo "::add-mask::${{ secrets.PASSWORD }}"
+          echo "::add-mask::${{ secrets.FIRST_USERNAME }}"
+          echo "::add-mask::${{ secrets.FIRST_PASSWORD }}"
           npx playwright test
 
       # Generate Allure report
