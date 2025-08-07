@@ -18,9 +18,9 @@ test('Sanity Check: Get Started Link', async ({ page }) => {
 });
 
 
-test('Sanity Check: A Test Case that should fail', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+// test('Sanity Check: A Test Case that should fail', async ({ page }) => {
+//   await page.goto('https://playwright.dev/');
 
-  // Intentionally failing: Expect title to contain WRONG text
-  await expect(page).toHaveTitle(/ThisShouldFail/);  // ❌ This will fail
-});
+//   // Intentionally failing: Expect title to contain WRONG text
+//   await expect(page).toHaveTitle(/ThisShouldFail/);  // ❌ This will fail
+// });

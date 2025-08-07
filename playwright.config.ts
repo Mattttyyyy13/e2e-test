@@ -51,6 +51,13 @@ export default defineConfig({
       baseURL: process.env.FIRST_LOGIN_URL 
     },
   },
+    {
+    name: 'a-sanity-check-chromium',
+    testDir: './projects/a-sanity-check/',
+    use: { 
+      ...devices['Desktop Chrome'], 
+    },
+  },
   // {
   //   name: 'skulibrary-firefox',
   //   testDir: './projects/skulibrary/tests',
