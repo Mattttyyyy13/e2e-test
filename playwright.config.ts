@@ -28,7 +28,14 @@ export default defineConfig({
   reporter: [
     ['list'],
     // ['html', { outputFolder: 'playwright-report' }], // Built-in HTML
-    ['allure-playwright'], // Allure integration
+    ['allure-playwright', {
+        environmentInfo: {
+          TEST_Skulibrary_URL: process.env.FIRST_LOGIN_URL,
+          TEST_Backoffice_URL: 'url_link',
+          PROD_Skulibrary_URL: 'url_link'
+        },
+      },
+    ], // Allure integration
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
