@@ -1,1 +1,1 @@
-[{"values":[""],"name":"TEST_SkuLibrary_URL"},{"values":["future_url_link"],"name":"TEST_Backoffice_URL"},{"values":["future_url_link"],"name":"PROD_Backoffice_URL"},{"values":["future_url_link"],"name":"PROD_SkuLibrary_URL"}]
+[{"values":["https://test-server.skulibrary.com"],"name":"TEST_SkuLibrary_URL"},{"values":["future_url_link"],"name":"TEST_Backoffice_URL"},{"values":["future_url_link"],"name":"PROD_Backoffice_URL"},{"values":["future_url_link"],"name":"PROD_SkuLibrary_URL"}]
