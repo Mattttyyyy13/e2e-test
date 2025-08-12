@@ -150,3 +150,7 @@ allure-results/
 allure-report/
 playwright-report/
 test-results/
+
+# Ignore all Playwright .auth directories in any project
+**/.auth/
+.DS_Store

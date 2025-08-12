@@ -30,9 +30,10 @@ export default defineConfig({
     // ['html', { outputFolder: 'playwright-report' }], // Built-in HTML
     ['allure-playwright', {
         environmentInfo: {
-          TEST_Skulibrary_URL: process.env.FIRST_LOGIN_URL,
-          TEST_Backoffice_URL: 'url_link',
-          PROD_Skulibrary_URL: 'url_link'
+          TEST_SkuLibrary_URL: process.env.SKULIBRARY_FE_TEST_URL,
+          TEST_Backoffice_URL: 'future_url_link',
+          PROD_Backoffice_URL: 'future_url_link',
+          PROD_SkuLibrary_URL: 'future_url_link'
         },
       },
     ], // Allure integration
@@ -40,74 +41,47 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: process.env.FIRST_LOGIN_URL, // From .env
+    baseURL: process.env.SKULIBRARY_FE_TEST_URL, // From .env
     screenshot: 'on',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',
   },
 
-  /* Configure projects for major browsers */
+  /* Configure projects for major browsers (chromium for now) */
   projects: [
-  // --- Test Suites ---
-  {
-    name: 'skulibrary-chromium',
-    testDir: './projects/skulibrary/tests',
-    use: { 
-      ...devices['Desktop Chrome'], 
-      baseURL: process.env.FIRST_LOGIN_URL 
-    },
-  },
+    // --- Test Suites ---
+    // Setup project (auth only)
     {
-    name: 'a-sanity-check-chromium',
-    testDir: './projects/a-sanity-check/',
-    use: { 
-      ...devices['Desktop Chrome'], 
+      name: 'Skulibrary Auth Setup - TEST',
+      testMatch: /.*auth\.setup\.ts/,
     },
-  },
-  // {
-  //   name: 'skulibrary-firefox',
-  //   testDir: './projects/skulibrary/tests',
-  //   use: { 
-  //     ...devices['Desktop Firefox'], 
-  //     baseURL: 'https://skulibrary.com' 
-  //   },
-  // },
-  // Add more apps/browsers as needed
-    // {
-    //   name: 'chromium',
-    //   use: { ...devices['Desktop Chrome'] },
-    // },
-
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
-
-    // {
-    //   name: 'webkit',
-    //   use: { ...devices['Desktop Safari'] },
-    // },
-
-    /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
-
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
+    {
+      name: 'Skulibrary Vendor Frontend (TD-1897 POC) - TEST',
+      testMatch: /projects\/skulibrary\/test-vendor\/.*\.spec\.ts/,
+      use: { 
+        ...devices['Desktop Chrome'], 
+        storageState: 'projects/skulibrary/.auth/test-vendor-state.json',
+      },
+      dependencies: ['Skulibrary Auth Setup - TEST'],
+    },
+    {
+      name: 'Skulibrary Vis Frontend (TD-1897 POC) - TEST',
+      testMatch: /projects\/skulibrary\/test-vis\/.*\.spec\.ts/,
+      use: { 
+        ...devices['Desktop Chrome'], 
+        storageState: 'projects/skulibrary/.auth/test-vis-state.json',
+      },
+      dependencies: ['Skulibrary Auth Setup - TEST'],
+    },
+    {
+      name: 'First Tests Check (Chromium)',
+      // testDir: './projects/a-sanity-check/',
+      testMatch: /projects\/a-sanity-check\/.*\.spec\.ts/,
+      use: { 
+        ...devices['Desktop Chrome'], 
+      },
+    },
   ],
 
   /* Run your local dev server before starting the tests */

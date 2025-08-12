@@ -33,13 +33,22 @@ jobs:
       # Run tests (root config handles projects) with masked secrets
       - name: Run Playwright tests
         env:
-          FIRST_USERNAME: ${{ secrets.FIRST_USERNAME }} # ✅ Consistent with your config
-          FIRST_PASSWORD: ${{ secrets.FIRST_PASSWORD }}
-          FIRST_LOGIN_URL: ${{ secrets.FIRST_LOGIN_URL }}
+          SKULIBRARY_FE_TEST_VENDOR_USERNAME: ${{ secrets.SKULIBRARY_FE_TEST_VENDOR_USERNAME }} # ✅ Consistent with your config
+          SKULIBRARY_FE_TEST_VENDOR_PASSWORD: ${{ secrets.SKULIBRARY_FE_TEST_VENDOR_PASSWORD }}
+          SKULIBRARY_FE_TEST_URL: ${{ secrets.SKULIBRARY_FE_TEST_URL }}
+          SKULIBRARY_FE_TEST_VIS_USERNAME: ${{ secrets.SKULIBRARY_FE_TEST_VIS_USERNAME }} # ✅ Consistent with your config
+          SKULIBRARY_FE_TEST_VIS_PASSWORD: ${{ secrets.SKULIBRARY_FE_TEST_VIS_PASSWORD }}
         run: | # ✅ Secret masking and catching failed tests to proceed deploying the page
-          echo "::add-mask::${{ secrets.FIRST_USERNAME }}" 
-          echo "::add-mask::${{ secrets.FIRST_PASSWORD }}"
+          echo "::add-mask::${{ secrets.SKULIBRARY_FE_TEST_VENDOR_USERNAME }}" 
+          echo "::add-mask::${{ secrets.SKULIBRARY_FE_TEST_VENDOR_PASSWORD }}"
+          echo "::add-mask::${{ secrets.SKULIBRARY_FE_TEST_VIS_USERNAME }}"
+          echo "::add-mask::${{ secrets.SKULIBRARY_FE_TEST_VIS_PASSWORD }}"
           npx playwright test || echo "::warning::Tests failed but continuing CI"
+          # after `npx playwright test` step
+
+      - name: Remove setup test from allure results
+        if: always()
+        run: node scripts/remove-setup-results.js
 
       - name: Generate Allure report
         if: always() # ✅ Runs even if tests fail (displays which test cases failed)
