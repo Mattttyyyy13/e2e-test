@@ -1,0 +1,4 @@
+Endpoint debugger is starting...
+POST RES << 307
+POST RES << 200
+The image file being uploaded exists? Answer:  true
