@@ -19,6 +19,6 @@ setup('authenticate and save storage state', async ({ page }) => {
 
   // Save authentication state
   await page.context().storageState({
-    path: path.resolve('projects/skulibrary/.auth/test-vis-state.json'),
+    path: path.resolve('projects/skulibrary-fe/.auth/test-vis-state.json'),
   });
 });

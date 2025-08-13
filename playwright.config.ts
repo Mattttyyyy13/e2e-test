@@ -5,9 +5,6 @@ import { defineConfig, devices } from '@playwright/test';
  * https://github.com/motdotla/dotenv
  */
 import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
-
 dotenv.config();
 
 /**
@@ -30,10 +27,18 @@ export default defineConfig({
     // ['html', { outputFolder: 'playwright-report' }], // Built-in HTML
     ['allure-playwright', {
         environmentInfo: {
-          TEST_SkuLibrary_URL: process.env.SKULIBRARY_FE_TEST_URL,
-          TEST_Backoffice_URL: 'future_url_link',
-          PROD_Backoffice_URL: 'future_url_link',
-          PROD_SkuLibrary_URL: 'future_url_link'
+          SKULIBRARY_FE_TEST_URL: process.env.SKULIBRARY_FE_TEST_URL,
+          SKULIBRARY_FE_TEST_VIS_USERNAME: process.env.SKULIBRARY_FE_TEST_VIS_USERNAME,
+          SKULIBRARY_FE_TEST_VIS_PASSWORD: '********',
+          SKULIBRARY_FE_TEST_VENDOR_USERNAME: process.env.SKULIBRARY_FE_TEST_VENDOR_USERNAME,
+          SKULIBRARY_FE_TEST_VENDOR_PASSWORD: '********',
+          BACKOFFICE_FE_TEST_URL: process.env.BACKOFFICE_FE_TEST_URL,
+          BACKOFFICE_FE_TEST_ADMIN_USERNAME: process.env.BACKOFFICE_FE_TEST_ADMIN_USERNAME,
+          BACKOFFICE_FE_TEST_ADMIN_PASSWORD: '********',
+          BACKOFFICE_FE_TEST_READONLY_USERNAME: process.env.BACKOFFICE_FE_TEST_READONLY_USERNAME,
+          BACKOFFICE_FE_TEST_READONLY_PASSWORD: '********',
+          BACKOFFICE_FE_PROD_URL: process.env.BACKOFFICE_FE_PROD_URL,
+          SKULIBRARY_FE_PROD_URL: 'future_url_link',
         },
       },
     ], // Allure integration
@@ -58,25 +63,24 @@ export default defineConfig({
     },
     {
       name: 'Skulibrary Vendor Frontend (TD-1897 POC) - TEST',
-      testMatch: /projects\/skulibrary\/test-vendor\/.*\.spec\.ts/,
+      testMatch: /projects\/skulibrary-fe\/test-vendor\/.*\.spec\.ts/,
       use: { 
         ...devices['Desktop Chrome'], 
-        storageState: 'projects/skulibrary/.auth/test-vendor-state.json',
+        storageState: 'projects/skulibrary-fe/.auth/test-vendor-state.json',
       },
       dependencies: ['Skulibrary Auth Setup - TEST'],
     },
     {
-      name: 'Skulibrary Vis Frontend (TD-1897 POC) - TEST',
+      name: 'Skulibrary VIS Frontend (TD-1897 POC) - TEST',
       testMatch: /projects\/skulibrary\/test-vis\/.*\.spec\.ts/,
       use: { 
         ...devices['Desktop Chrome'], 
-        storageState: 'projects/skulibrary/.auth/test-vis-state.json',
+        storageState: 'projects/skulibrary-fe/.auth/test-vis-state.json',
       },
       dependencies: ['Skulibrary Auth Setup - TEST'],
     },
     {
       name: 'First Tests Check (Chromium)',
-      // testDir: './projects/a-sanity-check/',
       testMatch: /projects\/a-sanity-check\/.*\.spec\.ts/,
       use: { 
         ...devices['Desktop Chrome'], 

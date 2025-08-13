@@ -33,16 +33,26 @@ jobs:
       # Run tests (root config handles projects) with masked secrets
       - name: Run Playwright tests
         env:
-          SKULIBRARY_FE_TEST_VENDOR_USERNAME: ${{ secrets.SKULIBRARY_FE_TEST_VENDOR_USERNAME }} # ✅ Consistent with your config
+          SKULIBRARY_FE_TEST_VENDOR_USERNAME: ${{ secrets.SKULIBRARY_FE_TEST_VENDOR_USERNAME }}
           SKULIBRARY_FE_TEST_VENDOR_PASSWORD: ${{ secrets.SKULIBRARY_FE_TEST_VENDOR_PASSWORD }}
           SKULIBRARY_FE_TEST_URL: ${{ secrets.SKULIBRARY_FE_TEST_URL }}
-          SKULIBRARY_FE_TEST_VIS_USERNAME: ${{ secrets.SKULIBRARY_FE_TEST_VIS_USERNAME }} # ✅ Consistent with your config
+          SKULIBRARY_FE_TEST_VIS_USERNAME: ${{ secrets.SKULIBRARY_FE_TEST_VIS_USERNAME }}
           SKULIBRARY_FE_TEST_VIS_PASSWORD: ${{ secrets.SKULIBRARY_FE_TEST_VIS_PASSWORD }}
+          BACKOFFICE_FE_TEST_URL: ${{ secrets.BACKOFFICE_FE_TEST_URL }}
+          BACKOFFICE_FE_TEST_ADMIN_USERNAME: ${{ secrets.BACKOFFICE_FE_TEST_ADMIN_USERNAME }}
+          BACKOFFICE_FE_TEST_ADMIN_PASSWORD: ${{ secrets.BACKOFFICE_FE_TEST_ADMIN_PASSWORD }}
+          BACKOFFICE_FE_TEST_READONLY_USERNAME: ${{ secrets.BACKOFFICE_FE_TEST_READONLY_USERNAME }}
+          BACKOFFICE_FE_TEST_READONLY_PASSWORD: ${{ secrets.BACKOFFICE_FE_TEST_READONLY_PASSWORD }}
+          BACKOFFICE_FE_PROD_URL: ${{ secrets.BACKOFFICE_FE_PROD_URL }}
         run: | # ✅ Secret masking and catching failed tests to proceed deploying the page
           echo "::add-mask::${{ secrets.SKULIBRARY_FE_TEST_VENDOR_USERNAME }}" 
           echo "::add-mask::${{ secrets.SKULIBRARY_FE_TEST_VENDOR_PASSWORD }}"
           echo "::add-mask::${{ secrets.SKULIBRARY_FE_TEST_VIS_USERNAME }}"
           echo "::add-mask::${{ secrets.SKULIBRARY_FE_TEST_VIS_PASSWORD }}"
+          echo "::add-mask::${{ secrets.BACKOFFICE_FE_TEST_ADMIN_USERNAME }}" 
+          echo "::add-mask::${{ secrets.BACKOFFICE_FE_TEST_ADMIN_PASSWORD }}"
+          echo "::add-mask::${{ secrets.BACKOFFICE_FE_TEST_READONLY_USERNAME }}"
+          echo "::add-mask::${{ secrets.BACKOFFICE_FE_TEST_READONLY_PASSWORD }}"
           npx playwright test || echo "::warning::Tests failed but continuing CI"
           # after `npx playwright test` step
 

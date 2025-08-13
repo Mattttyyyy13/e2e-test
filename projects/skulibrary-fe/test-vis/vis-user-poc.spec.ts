@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 // Object holding reusable product details for the VIS user journey
 const productTestData = {
-  ean: '8888666613223',
+  ean: '8888666613227',
   title: 'VIS User Product',
   category: 'Liquor',
 };
