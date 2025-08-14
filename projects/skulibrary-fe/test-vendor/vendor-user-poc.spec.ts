@@ -5,7 +5,7 @@ import path from 'path';
 
 // Object for the test data
 const createProductTestData = {
-  ean: '8888666613282', 
+  ean: '8888666613283', 
   title: `Random Product Title`,
   category: 'Liquor',
 };
@@ -132,7 +132,7 @@ test.describe('TD-1897: Vendor User Journey POC', () => {
     // await page.waitForTimeout(25000);
   });
 
-  test.skip('Publish Approved Product', async ({ page }) => {
+  test('Publish Approved Product', async ({ page }) => {
     await test.step('1. Ensure vendor session is active', async () => {
       await page.goto('/dashboard', { waitUntil: 'domcontentloaded' });
       await expect(page).toHaveURL(new RegExp(`${process.env.SKULIBRARY_FE_TEST_URL}/dashboard`));
