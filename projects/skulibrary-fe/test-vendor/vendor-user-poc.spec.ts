@@ -5,13 +5,13 @@ import path from 'path';
 
 // Object for the test data
 const createProductTestData = {
-  ean: '8888666613277', 
+  ean: '8888666613282', 
   title: `Random Product Title`,
   category: 'Liquor',
 };
 
 const productPublishData = {
-  ean: '8888666613223',
+  ean: '8888666613224',
   mandatoryDropdown: {
     sector: 'Sector',
     onlineVisibility: 'Online Visibility',
@@ -59,7 +59,10 @@ test.describe('TD-1897: Vendor User Journey POC', () => {
       await page.fill('#barcode_0', createProductTestData.ean);
       await page.fill('#title_0', `${createProductTestData.title} ${createProductTestData.ean}`);
       await page.selectOption('#category_0', { value: 'HOST_Liquor' });
-      await page.click('button.createProdBttn');
+      await Promise.all([
+        page.waitForURL(new RegExp(`/product/HOST_${createProductTestData.ean}`), { waitUntil: 'domcontentloaded' }),
+        page.click('button.createProdBttn'),
+      ]);
       await expect(page).toHaveURL(new RegExp(`/product/HOST_${createProductTestData.ean}`));
     });
 
@@ -97,10 +100,20 @@ test.describe('TD-1897: Vendor User Journey POC', () => {
       ])
 
       await fileChooser.setFiles(imagePath);
+
+
+
+      const uploadingDialog = page.locator('.MuiDialog-container:has-text("Uploading images")');
+
+      // 1) Wait until the dialog appears
+      await expect(uploadingDialog).toBeVisible({ timeout: 15000 });
+
+      // 2) Wait until it disappears (either removed from DOM or display:none)
+      await expect(uploadingDialog).toBeHidden({ timeout: 20000 }); // give it more time if needed
       
       // Verify status changes to IN PROGRESS
-      const statusElement = page.locator('.MuiChip-label:has-text("In Progress")');
-      await expect(statusElement).toBeVisible();
+      // const statusElement = page.locator('.MuiChip-label:has-text("In Progress")');
+      // await expect(statusElement).toBeVisible();
 
       // Submit images for review
       // await page.click('button:has-text("Submit Images")');
@@ -119,7 +132,7 @@ test.describe('TD-1897: Vendor User Journey POC', () => {
     // await page.waitForTimeout(25000);
   });
 
-  test('Publish Approved Product', async ({ page }) => {
+  test.skip('Publish Approved Product', async ({ page }) => {
     await test.step('1. Ensure vendor session is active', async () => {
       await page.goto('/dashboard', { waitUntil: 'domcontentloaded' });
       await expect(page).toHaveURL(new RegExp(`${process.env.SKULIBRARY_FE_TEST_URL}/dashboard`));

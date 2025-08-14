@@ -72,7 +72,7 @@ export default defineConfig({
     },
     {
       name: 'Skulibrary VIS Frontend (TD-1897 POC) - TEST',
-      testMatch: /projects\/skulibrary\/test-vis\/.*\.spec\.ts/,
+      testMatch: /projects\/skulibrary-fe\/test-vis\/.*\.spec\.ts/,
       use: { 
         ...devices['Desktop Chrome'], 
         storageState: 'projects/skulibrary-fe/.auth/test-vis-state.json',
