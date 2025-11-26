@@ -2,7 +2,12 @@ name: Tests
 on: 
   push:
     branches: [ main ] # Workflow will be activated whenever there's a push on branch 'main'
-
+  # Allow manual trigger from GitHub UI / API
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Why are you triggering this workflow?'
+        required: false
 jobs:
   test:
     runs-on: ubuntu-latest

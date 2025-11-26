@@ -1,11 +1,11 @@
 {
   "vendorCreateProduct": {
-    "ean": "8888666613288",
+    "ean": "8888666613289",
     "title": "Random Product Title",
     "category": "Liquor"
   },
   "visUserApproveImagesProduct": {
-    "ean": "8888666613286"
+    "ean": "8888666613287"
   },
   "vendorPublishProduct": {
     "ean": "8888666613285",
@@ -16,7 +16,7 @@
     },
     "inputValues": {
       "sector": "Liquor",
-      "onlineVisibility": "InternalOnly",
+      "onlineVisibility": "Internal Only",
       "catalogueVisibility": "n/a"
     }
   }
