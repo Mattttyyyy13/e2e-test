@@ -1,0 +1,862 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - link "SKUlibrary Logo":
+    - /url: /dashboard
+    - img "SKUlibrary Logo"
+  - combobox "All Products"
+  - textbox "Search by Title, Barcode, and Brand"
+  - button
+  - button "0":
+    - paragraph: "0"
+  - img "User Group Logo"
+  - paragraph: HostingDemoWriteGroup
+  - paragraph: hostdemosku2
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "My Products":
+          - /url: https://test-server.skulibrary.com/All-Products/c/allcategories?q=all-my-products
+      - listitem:
+        - link "Wine":
+          - /url: /search?requestType=MY_PRODUCTS_ONLY&fn1=L1-Category&fv1=Wine
+      - listitem:
+        - paragraph: Random Product Title 8888666613285
+  - paragraph: "Current Status:"
+  - paragraph: In Progress
+  - button "Jump To"
+  - button "Email front images and product data."
+  - button "Quick download front images and product data."
+  - button "Add product to cart"
+  - button "Save"
+  - button "More Actions"
+  - button "Edit Status"
+  - paragraph: You are in Suggest Mode - You are providing suggestions for the product owner
+  - heading "Errors - This product has 3 errors requiring attention" [level=3]:
+    - button "Errors - This product has 3 errors requiring attention":
+      - paragraph: Errors - This product has 3 errors requiring attention
+  - paragraph: Image Gallery
+  - button
+  - img "1"
+  - button "Open Gallery"
+  - paragraph: Content Rating
+  - text: 20% 40% 60% 80% 100%
+  - img
+  - separator
+  - heading [level=3]:
+    - button [expanded]
+  - region:
+    - paragraph: Hero and Packaging Images
+    - progressbar
+    - paragraph: Extended Images
+    - progressbar
+    - paragraph: Product Copy
+    - progressbar
+    - paragraph: Product Extended Data
+    - progressbar
+    - paragraph: Core Attributes
+    - progressbar
+  - text: Visibility Sector
+  - button "Liquor"
+  - combobox "Sector"
+  - button "Open"
+  - paragraph: Attribute Sector is required for PUBLISH but was not present
+  - text: Online Visibility
+  - combobox "Online Visibility" [expanded]
+  - button "Close"
+  - paragraph: Attribute Online Visibility is required for PUBLISH but was not present
+  - text: Catalogue Visibility
+  - combobox "Catalogue Visibility"
+  - button "Open"
+  - paragraph: Attribute Catalogue Visibility is required for PUBLISH but was not present
+  - text: World Region
+  - combobox "World Region"
+  - button "Open"
+  - text: Online from
+  - group "Online from":
+    - spinbutton "Day": "01"
+    - text: /
+    - spinbutton "Month": "01"
+    - text: /
+    - spinbutton "Year": "1999"
+    - button "Choose date, selected date is Jan 1, 1999"
+  - text: Online to
+  - group "Online to":
+    - spinbutton "Day": "31"
+    - text: /
+    - spinbutton "Month": "12"
+    - text: /
+    - spinbutton "Year": "2099"
+    - button "Choose date, selected date is Dec 31, 2099"
+  - text: Product Updates Time created
+  - group "Time created":
+    - spinbutton "Day" [disabled]: "25"
+    - text: /
+    - spinbutton "Month" [disabled]: "11"
+    - text: /
+    - spinbutton "Year" [disabled]: "2025"
+    - spinbutton "Hours" [disabled]: "01"
+    - text: ":"
+    - spinbutton "Minutes" [disabled]: "24"
+    - button "Choose date, selected date is Nov 25, 2025" [disabled]
+  - text: Time modified
+  - group "Time modified":
+    - spinbutton "Day" [disabled]: "26"
+    - text: /
+    - spinbutton "Month" [disabled]: "11"
+    - text: /
+    - spinbutton "Year" [disabled]: "2025"
+    - spinbutton "Hours" [disabled]: "12"
+    - text: ":"
+    - spinbutton "Minutes" [disabled]: "40"
+    - button "Choose date, selected date is Nov 26, 2025" [disabled]
+  - separator
+  - text: Workflow Image Status Change Time
+  - group "Workflow Image Status Change Time":
+    - spinbutton "Day" [disabled]: "25"
+    - text: /
+    - spinbutton "Month" [disabled]: "11"
+    - text: /
+    - spinbutton "Year" [disabled]: "2025"
+    - spinbutton "Hours" [disabled]: "01"
+    - text: ":"
+    - spinbutton "Minutes" [disabled]: "26"
+    - button "Choose date, selected date is Nov 25, 2025" [disabled]
+  - text: Product Change Time
+  - group "Product Change Time":
+    - spinbutton "Day" [disabled]: "26"
+    - text: /
+    - spinbutton "Month" [disabled]: "11"
+    - text: /
+    - spinbutton "Year" [disabled]: "2025"
+    - spinbutton "Hours" [disabled]: "12"
+    - text: ":"
+    - spinbutton "Minutes" [disabled]: "40"
+    - button "Choose date, selected date is Nov 26, 2025" [disabled]
+  - text: Features & Benefits Bullet 1
+  - textbox "Bullet 1"
+  - text: Bullet 2
+  - textbox "Bullet 2"
+  - text: Bullet 3
+  - textbox "Bullet 3"
+  - text: Bullet 4
+  - textbox "Bullet 4"
+  - text: Bullet 5
+  - textbox "Bullet 5"
+  - text: Bullet 6
+  - textbox "Bullet 6"
+  - text: Bullet 7
+  - textbox "Bullet 7"
+  - text: Bullet 8
+  - textbox "Bullet 8"
+  - text: Keywords
+  - textbox "Keywords"
+  - text: SEO
+  - textbox "SEO"
+  - text: Region Wine Region
+  - textbox "Wine Region"
+  - text: Bottled In
+  - combobox "Bottled In"
+  - button "Open"
+  - text: Climate
+  - combobox "Climate"
+  - button "Open"
+  - text: Winemaker
+  - textbox "Winemaker"
+  - text: Winery Postcode
+  - combobox "Winery Postcode"
+  - button "Open"
+  - text: Core Attributes Product Name
+  - textbox "Product Name": Random Product Title 8888666613285
+  - text: Product Code
+  - textbox "Product Code" [disabled]: HOST_8888666613285
+  - text: EAN
+  - textbox "EAN": "8888666613285"
+  - text: Short Code
+  - textbox "Short Code": BAN1554
+  - text: Asset Type Product Images
+  - combobox "Asset Type"
+  - button "Open"
+  - text: Category
+  - button "Wine"
+  - textbox "Category"
+  - text: GPC Code
+  - textbox "GPC Code"
+  - text: Supplier
+  - textbox "Supplier": HostingDemo
+  - paragraph: Syndication Tracker
+  - heading "Syndication Tracker not available" [level=3]
+  - paragraph: Populate your Online Visibility list to see the retailer tiles.
+  - text: Codes EAN2
+  - textbox "EAN2"
+  - text: Supplier Code
+  - textbox "Supplier Code"
+  - text: Additional Supplier Code
+  - textbox "Additional Supplier Code"
+  - text: BrandCode
+  - textbox "BrandCode"
+  - text: ASIN
+  - textbox "ASIN"
+  - text: Chemist Warehouse Product Code
+  - textbox "Chemist Warehouse Product Code"
+  - text: Coles Code
+  - textbox "Coles Code" [disabled]
+  - text: Metcash Code
+  - textbox "Metcash Code"
+  - text: Myer Code
+  - textbox "Myer Code"
+  - text: Woolworths Code
+  - textbox "Woolworths Code"
+  - text: Product Copy Short Copy
+  - textbox "Short Copy"
+  - text: Long Copy
+  - button
+  - button "Undo" [disabled]
+  - button "Redo" [disabled]
+  - separator
+  - combobox: Paragraph
+  - separator
+  - combobox
+  - separator
+  - button "Bold"
+  - button "Italic"
+  - button "Underline"
+  - button "Strikethrough"
+  - button "Subscript"
+  - button "Superscript"
+  - separator
+  - button "Link"
+  - separator
+  - combobox
+  - separator
+  - button "Ordered list"
+  - button "Bulleted list"
+  - separator
+  - button "Blockquote"
+  - separator
+  - button "Code"
+  - button "Code block"
+  - separator
+  - button "Insert horizontal line"
+  - button "Insert table"
+  - separator
+  - button "Remove inline formatting"
+  - textbox:
+    - paragraph
+  - text: Brand Brand
+  - combobox "Brand"
+  - text: Sub Brand
+  - combobox "Sub Brand"
+  - text: Brand Messaging
+  - textbox "Brand Messaging"
+  - text: General Size
+  - textbox "Size"
+  - text: Alcohol By Volume
+  - textbox "Alcohol By Volume"
+  - text: Standard Drinks
+  - textbox "Standard Drinks"
+  - text: Features & Claims Current Vintage
+  - textbox "Current Vintage"
+  - text: Varietal Designation
+  - combobox "Varietal Designation"
+  - button "Open"
+  - text: Blend Composition
+  - combobox "Blend Composition"
+  - button "Open"
+  - text: Colour
+  - textbox "Colour"
+  - text: Tasting Notes
+  - textbox "Tasting Notes"
+  - text: Taste on Palate
+  - combobox "Taste on Palate"
+  - button "Open"
+  - text: Palate
+  - textbox "Palate"
+  - text: Sparkling Style
+  - combobox "Sparkling Style"
+  - button "Open"
+  - text: Wine Body
+  - combobox "Wine Body"
+  - button "Open"
+  - text: Wine Style
+  - combobox "Wine Style"
+  - button "Open"
+  - text: Animal Welfare Claim
+  - combobox "Animal Welfare Claim"
+  - button "Open"
+  - text: Dietary Claim
+  - combobox "Dietary Claim"
+  - button "Open"
+  - text: Lifestyle Claim
+  - combobox "Lifestyle Claim"
+  - button "Open"
+  - text: Kosher Certification
+  - textbox "Kosher Certification"
+  - text: Kosher Certification Body
+  - textbox "Kosher Certification Body"
+  - text: Organic Certification
+  - textbox "Organic Certification"
+  - text: Organic Certification Body
+  - textbox "Organic Certification Body"
+  - text: Vegan Certification
+  - textbox "Vegan Certification"
+  - separator
+  - text: Vegan Certification Body
+  - textbox "Vegan Certification Body"
+  - text: Fermentation Vessel
+  - combobox "Fermentation Vessel"
+  - button "Open"
+  - text: Oak Influence
+  - combobox "Oak Influence"
+  - button "Open"
+  - text: Cellaring Potential
+  - combobox "Cellaring Potential"
+  - button "Open"
+  - text: Soil Type
+  - textbox "Soil Type"
+  - text: pH Level
+  - textbox "pH Level"
+  - text: Limited Edition
+  - checkbox "True"
+  - text: "True"
+  - checkbox "False"
+  - text: False Is Gift Boxed
+  - checkbox "True"
+  - text: "True"
+  - checkbox "False"
+  - text: False Is Pet Nat
+  - checkbox "True"
+  - text: "True"
+  - checkbox "False"
+  - text: False Minimal Intervention
+  - checkbox "True"
+  - text: "True"
+  - checkbox "False"
+  - text: False Orange
+  - checkbox "True"
+  - text: "True"
+  - checkbox "False"
+  - text: False Skinnsy
+  - checkbox "True"
+  - text: "True"
+  - checkbox "False"
+  - text: False Unfiltered
+  - checkbox "True"
+  - text: "True"
+  - checkbox "False"
+  - text: False Is Non Chill Filtered
+  - checkbox "True"
+  - text: "True"
+  - checkbox "False"
+  - text: False Alcohol Free
+  - combobox "Alcohol Free"
+  - button "Open"
+  - text: Langtons Classification
+  - combobox "Langtons Classification"
+  - button "Open"
+  - text: Vinification and Maturation
+  - textbox "Vinification and Maturation"
+  - text: Vintage Note
+  - textbox "Vintage Note"
+  - paragraph: Nutritional Information - General
+  - text: Multi Nutrient Panel Product
+  - checkbox "True"
+  - text: "True"
+  - checkbox "False" [checked]
+  - text: False Please be aware, Setting 'multi nutrient panel product' to TRUE means your content cannot be sent to Coles or Woolworths as it will not meet their required data structure. Serving Size
+  - textbox
+  - combobox
+  - text: Servings Per Pack
+  - textbox "Servings Per Pack"
+  - paragraph: Quantity Per Serve
+  - paragraph: "% Daily Intake"
+  - paragraph: Quantity per 100g
+  - paragraph: Energy kJ
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - paragraph: Energy Cal
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - paragraph: Protein
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - paragraph: Fat Total
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - paragraph: Saturated Fats
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - paragraph: Trans Fat
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - paragraph: Polyunsaturated Fats
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - paragraph: Monounsaturated Fats
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - paragraph: Carbohydrate
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - paragraph: Sugars
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - paragraph: Added Sugar By Serving
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - paragraph: Dietary Fibre
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - paragraph: Sodium
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - combobox
+  - textbox
+  - combobox
+  - text: Instructions Serving Suggestion
+  - textbox "Serving Suggestion"
+  - text: Food Match
+  - combobox "Food Match"
+  - button "Open"
+  - text: Web Food Match
+  - combobox "Web Food Match"
+  - button "Open"
+  - text: Food Match
+  - textbox "Food Match"
+  - text: Target Audience
+  - textbox "Target Audience"
+  - text: Occasion
+  - combobox "Occasion"
+  - button "Open"
+  - text: Peak Drinking
+  - textbox "Peak Drinking"
+  - text: Safety Important Information
+  - textbox "Important Information"
+  - text: Product Warnings
+  - textbox "Product Warnings"
+  - text: Contained Acetone Concentration Code
+  - combobox "Contained Acetone Concentration Code"
+  - button "Open"
+  - text: Is Aerosol
+  - checkbox "True"
+  - text: "True"
+  - checkbox "False"
+  - text: False Is Aerosol Propellant Flammable
+  - checkbox "True"
+  - text: "True"
+  - checkbox "False"
+  - text: False Is Expanded Plastic
+  - checkbox "True"
+  - text: "True"
+  - checkbox "False"
+  - text: False Is Expiration Dated Product
+  - checkbox "True"
+  - text: "True"
+  - checkbox "False"
+  - text: False Is Miscible
+  - checkbox "True"
+  - text: "True"
+  - checkbox "False"
+  - text: False United Nations Dangerous Goods Number
+  - combobox "United Nations Dangerous Goods Number"
+  - button "Open"
+  - text: Dimensions Net Content
+  - spinbutton "Net Content"
+  - text: Net Content UOM
+  - combobox "Net Content UOM"
+  - button "Open"
+  - text: Height
+  - spinbutton "Height"
+  - text: Height UOM
+  - combobox "Height UOM"
+  - button "Open"
+  - text: Width
+  - spinbutton "Width"
+  - text: Width UOM
+  - combobox "Width UOM"
+  - button "Open"
+  - text: Depth
+  - spinbutton "Depth"
+  - text: Depth UOM
+  - combobox "Depth UOM"
+  - button "Open"
+  - text: Gross Weight
+  - spinbutton "Gross Weight"
+  - text: Gross Weight UOM
+  - combobox "Gross Weight UOM"
+  - button "Open"
+  - text: Net Weight
+  - spinbutton "Net Weight"
+  - text: Net Weight UOM
+  - combobox "Net Weight UOM"
+  - button "Open"
+  - text: Awards Award Winner
+  - checkbox "True"
+  - text: "True"
+  - checkbox "False"
+  - text: False Awards Won
+  - textbox "Awards Won"
+  - text: Gold Awards Won
+  - spinbutton "Gold Awards Won"
+  - text: Silver Awards Won
+  - spinbutton "Silver Awards Won"
+  - text: Bronze Awards Won
+  - spinbutton "Bronze Awards Won"
+  - text: Trophy Awards Won
+  - spinbutton "Trophy Awards Won"
+  - text: Other Additional Information
+  - textbox "Additional Information"
+  - text: Product Title Long
+  - textbox "Product Title Long"
+  - text: Display on Website
+  - checkbox "True"
+  - text: "True"
+  - checkbox "False"
+  - text: False Meta Title
+  - textbox "Meta Title"
+  - text: Meta Description
+  - textbox "Meta Description"
+  - text: Meta Tags
+  - textbox "Meta Tags"
+  - text: Parent Product?
+  - checkbox "True"
+  - text: "True"
+  - checkbox "False" [checked]
+  - text: False Parent Product Code
+  - textbox "Parent Product Code"
+  - text: Is GST Applicable
+  - checkbox "True"
+  - text: "True"
+  - checkbox "False"
+  - text: False 360 Spin 360 URL
+  - textbox "360 URL" [disabled]
+  - text: 360 Embed Code
+  - textbox "360 Embed Code" [disabled]
+  - text: 360 Spin
+  - textbox "360 Spin" [disabled]
+  - text: Ingredients Allergen Contains
+  - combobox "Allergen Contains"
+  - button "Open"
+  - text: Allergen Free From
+  - combobox "Allergen Free From"
+  - button "Open"
+  - text: Allergen May be Present
+  - combobox "Allergen May be Present"
+  - button "Open"
+  - text: Contains
+  - textbox "Contains"
+  - text: Preservatives
+  - textbox "Preservatives"
+  - text: Ingredients
+  - textbox "Ingredients"
+  - text: Storage and Disposal Recyclable Information
+  - textbox "Recyclable Information"
+  - text: Recyclable Packaging
+  - combobox "Recyclable Packaging"
+  - button "Open"
+  - text: Recycling Code
+  - combobox "Recycling Code"
+  - button "Open"
+  - text: Shelf Life
+  - textbox "Shelf Life"
+  - text: Storage and Disposal Instructions
+  - textbox "Storage and Disposal Instructions"
+  - text: Storage Temperature
+  - textbox "Storage Temperature"
+  - text: Manufacturer Contact Details
+  - textbox "Contact Details"
+  - text: Manufacturer
+  - textbox "Manufacturer"
+  - text: Manufacturer Address
+  - textbox "Manufacturer Address"
+  - text: Website
+  - textbox "Website"
+  - text: Packaging & Shipping Product Packaging
+  - combobox "Product Packaging"
+  - button "Open"
+  - text: Opening Type
+  - combobox "Opening Type"
+  - button "Open"
+  - text: Bottle Closure
+  - combobox "Bottle Closure"
+  - button "Open"
+  - text: Units Per Pack Number
+  - spinbutton "Units Per Pack Number"
+  - text: Units Per Inner Pack
+  - textbox "Units Per Inner Pack"
+  - text: Reviews Review Author 1
+  - combobox "Review Author 1"
+  - button "Open"
+  - text: Review Author Content 1
+  - textbox "Review Author Content 1"
+  - text: Review Source 1
+  - textbox "Review Source 1"
+  - text: Review Points 1
+  - combobox "Review Points 1"
+  - button "Open"
+  - text: Review Vintage 1
+  - textbox "Review Vintage 1"
+  - text: Review Text 1
+  - textbox "Review Text 1"
+  - text: Review Author 2
+  - combobox "Review Author 2"
+  - button "Open"
+  - text: Review Author Content 2
+  - textbox "Review Author Content 2"
+  - text: Review Source 2
+  - textbox "Review Source 2"
+  - text: Review Points 2
+  - combobox "Review Points 2"
+  - button "Open"
+  - text: Review Vintage 2
+  - textbox "Review Vintage 2"
+  - text: Review Text 2
+  - textbox "Review Text 2"
+  - text: Review Author 3
+  - combobox "Review Author 3"
+  - button "Open"
+  - text: Review Author Content 3
+  - textbox "Review Author Content 3"
+  - text: Review Source 3
+  - textbox "Review Source 3"
+  - text: Review Points 3
+  - combobox "Review Points 3"
+  - button "Open"
+  - text: Review Vintage 3
+  - textbox "Review Vintage 3"
+  - text: Review Text 3
+  - textbox "Review Text 3"
+  - text: Review Author 4
+  - combobox "Review Author 4"
+  - button "Open"
+  - text: Review Author Content 4
+  - textbox "Review Author Content 4"
+  - text: Review Source 4
+  - textbox "Review Source 4"
+  - text: Review Points 4
+  - combobox "Review Points 4"
+  - button "Open"
+  - text: Review Text 4
+  - textbox "Review Text 4"
+  - text: Video Video URL
+  - textbox "Video URL"
+  - text: Video URL 2
+  - textbox "Video URL 2"
+  - text: Video URL 3
+  - textbox "Video URL 3"
+  - text: Video URL 4
+  - textbox "Video URL 4"
+  - paragraph: Attachments
+  - paragraph: Drag & Drop Files here
+  - text: or
+  - button "Upload Files": Browse Files
+  - heading "Drop Files To Upload" [level=2]
+- contentinfo:
+  - paragraph: About SKULibrary
+  - paragraph: Quick Links
+  - paragraph: Contact Us
+  - paragraph: SKUlibrary is the cloud-based product content management platform from Salsify ANZ. Salsify ANZ is focussed on gathering, producing, structuring, and delivering product content to our retail and manufacturer clients. With great product content, their customers have a great online and multi-channel experience and can make informed choices about what they purchase. SKUlibrary revolutionises how product content can be cost effective and reliably managed for small and medium sized businesses.
+  - link "SKUlibrary for Retailers":
+    - /url: https://www.skuvantage.com.au/skucapture-product-information-sourcing-from-your-suppliers/
+  - link "SKUlibrary for Vendors":
+    - /url: https://www.skuvantage.com.au/digital-product-catalogue/
+  - link "Features of SKUlibrary":
+    - /url: https://www.skuvantage.com.au/skulibrary-features/
+  - link "SKUlibrary Application":
+    - /url: https://go.skulibrary.com/apply2
+  - link "About SKUlibrary":
+    - /url: https://www.skuvantage.com.au/about-us/
+  - link "Salsify ANZ Blog":
+    - /url: https://www.skuvantage.com.au/sydney-product-photography-studio/
+  - link "Salsify ANZ Services":
+    - /url: https://www.skuvantage.com.au/
+  - paragraph: "Australia: +61 2 8484 0345"
+  - paragraph: "Email: supportanz@salsify.com"
+  - paragraph: "This whole site is Copyright © Salsify ANZ 2025. ACN: 158 804 114"
+- paragraph: Click to view attribute issues
+- paragraph
+- button "Previous" [disabled]
+- button "Next"
+- alert
+- iframe
+- text: "2"
+- listbox "Online Visibility":
+  - option "Foodstuffs":
+    - checkbox
+    - text: Foodstuffs
+  - option "Internal Only":
+    - checkbox
+    - text: Internal Only
+  - option "Open Catalogue AU":
+    - checkbox
+    - text: Open Catalogue AU
+  - option "Open Catalogue NZ":
+    - checkbox
+    - text: Open Catalogue NZ
+  - option "Australian Liquor Marketers":
+    - checkbox
+    - text: Australian Liquor Marketers
+  - option "BigW":
+    - checkbox
+    - text: BigW
+  - option "Chemist Warehouse AU":
+    - checkbox
+    - text: Chemist Warehouse AU
+  - option "Chemist Warehouse NZ":
+    - checkbox
+    - text: Chemist Warehouse NZ
+  - option "Coles CFC":
+    - checkbox
+    - text: Coles CFC
+  - option "Coles Digital":
+    - checkbox
+    - text: Coles Digital
+  - option "Coles Liquor Group":
+    - checkbox
+    - text: Coles Liquor Group
+  - option "Countrywide":
+    - checkbox
+    - text: Countrywide
+  - option "Direct Chemist Outlet":
+    - checkbox
+    - text: Direct Chemist Outlet
+  - option "EBOS/Symbion":
+    - checkbox
+    - text: EBOS/Symbion
+  - option "Endeavour Group":
+    - checkbox
+    - text: Endeavour Group
+  - option "Healthy Life":
+    - checkbox
+    - text: Healthy Life
+  - option "Kmart":
+    - checkbox
+    - text: Kmart
+  - option "Metcash":
+    - checkbox
+    - text: Metcash
+  - option "Mitre 10/IHG":
+    - checkbox
+    - text: Mitre 10/IHG
+  - option "Nutrien Ag":
+    - checkbox
+    - text: Nutrien Ag
+  - option "Sigma/Amcal":
+    - checkbox
+    - text: Sigma/Amcal
+  - option "Sodexo":
+    - checkbox
+    - text: Sodexo
+  - option "Target":
+    - checkbox
+    - text: Target
+  - option "Terry White Chemmart":
+    - checkbox
+    - text: Terry White Chemmart
+  - option "Uber Eats AU":
+    - checkbox
+    - text: Uber Eats AU
+  - option "Woolworths AU":
+    - checkbox
+    - text: Woolworths AU
+  - option "Woolworths NZ":
+    - checkbox
+    - text: Woolworths NZ
+  - option "Myer":
+    - checkbox
+    - text: Myer
+  - option "DoorDash":
+    - checkbox
+    - text: DoorDash
+- tooltip "Retailers that the product content is available to be syndicated to."
+```
