@@ -45,10 +45,7 @@ export default defineConfig({
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: process.env.SKULIBRARY_FE_TEST_URL, // From .env
     screenshot: 'on',
-
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',
   },
@@ -66,6 +63,8 @@ export default defineConfig({
       testMatch: /projects\/skulibrary-fe\/test-vendor\/.*\.spec\.ts/,
       use: { 
         ...devices['Desktop Chrome'], 
+        /* Base URL to use in actions like `await page.goto('/')`. */
+        baseURL: process.env.SKULIBRARY_FE_TEST_URL,
         storageState: 'projects/skulibrary-fe/.auth/test-vendor-state.json',
       },
       dependencies: ['Skulibrary Auth Setup - TEST'],
@@ -75,6 +74,8 @@ export default defineConfig({
       testMatch: /projects\/skulibrary-fe\/test-vis\/.*\.spec\.ts/,
       use: { 
         ...devices['Desktop Chrome'], 
+        /* Base URL to use in actions like `await page.goto('/')`. */
+        baseURL: process.env.SKULIBRARY_FE_TEST_URL,
         storageState: 'projects/skulibrary-fe/.auth/test-vis-state.json',
       },
       dependencies: ['Skulibrary Auth Setup - TEST'],
@@ -91,7 +92,9 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   // webServer: {
   //   command: 'npm run start',
-  //   url: 'http://localhost:3000',
+  //   url: 'http://localhost:3001',
   //   reuseExistingServer: !process.env.CI,
+  //   stdout: 'ignore',
+  //   stderr: 'pipe',
   // },
 });

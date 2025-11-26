@@ -11,16 +11,12 @@ The repository is designed to be approachable for both engineers _and_ non-techn
 ./
 ├── projects/                 # All test code lives here, grouped by projects
 │   ├── a-sanity-check/       # Quick connectivity / smoke checks
-│   ├── skulibrary-fe/        # Tests for frontend SKULibrary
-│   │   ├── test-vendor/      # Env: Test, User_Type: Vendor
-│   │   ├── test-vis/         # Env: Test, User_Type: VIS
-│   │   ├── test-retailer/    # Env: Test, User_Type: Retailer
-│   │   ├── prod-vendor/      # Env: Prod, User_Type: Vendor
-│   │   ├── prod-vis/         # Env: Prod, User_Type: VIS
-│   │   ├── prod-retailer/    # Env: Prod, User_Type: Retailer
-│   │   └── *.setup.ts        # Login helpers (storageState)
-│   └── backoffice-fe/        # Tests for FE Backoffice (suggested)
-│   └── microservices/        # Tests for microservices (suggested)
+│   └── skulibrary-fe/        # Tests for frontend SKULibrary
+│       ├── test-vendor/      # Env: Test, User_Type: Vendor
+│       ├── test-vis/         # Env: Test, User_Type: VIS
+│       ├── test-retailer/    # Env: Test, User_Type: Retailer
+│       └── *.setup.ts        # Login helpers (storageState)
+│ 
 │
 ├── utils/                    # Cross-test helpers (env, fixtures, data builders…etc)
 ├── scripts/                  # One-off maintenance scripts
@@ -95,13 +91,7 @@ The repository is designed to be approachable for both engineers _and_ non-techn
 6. Remove `only`, commit, push – the CI will execute the full project automatically. (Currently on Github Pages)
 
 
-### 4.2  Back-end / API / Backoffice
-1. Create a new directory under `projects/` (or similar).  
-2. Write tests using `request.newContext()` for pure HTTP checks (Check PlayWright Documentation for more guides of API testings) _or_ `page` for admin UI. (Backoffice) 
-3. Re-use or create helpers in `utils/` for auth tokens, test data, etc.
-4. _Optional_ – add your own Playwright **project** in `playwright.config.ts` to isolate baseURL, headers, etc.
-
-### 4.3  Common Best Practices
+### 4.2  Common Best Practices
 - Wrap related actions in `test.step('description', async () => {...})` for nicer Allure timelines.
 - Keep fixtures (users, products, images) small and deterministic.
 - Use `expect.poll()` for eventual consistency rather than fixed `waitForTimeout`. (Once in a while use isn't that bad though)

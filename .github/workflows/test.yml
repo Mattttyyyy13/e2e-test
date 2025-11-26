@@ -56,6 +56,24 @@ jobs:
           npx playwright test || echo "::warning::Tests failed but continuing CI"
           # after `npx playwright test` step
 
+      # --- Preserve Allure history across workflow runs ---
+      - name: Download previous Allure history
+        if: always()
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+          sparse-checkout: |
+            history
+
+      - name: Preserve Allure history
+        if: always()
+        run: |
+          if [ -d gh-pages/history ]; then
+            mkdir -p allure-results/history
+            cp -r gh-pages/history/* allure-results/history/ || true
+          fi
+
       - name: Remove setup test from allure results
         if: always()
         run: node scripts/remove-setup-results.js
@@ -79,4 +97,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }} # ✅ Correct automatic token
           publish_dir: ./allure-report
-          keep_files: false # False value prevents overcrowding, mismatched resources of Allure reports display (old files to new files)
+          keep_files: true # False value prevents overcrowding, mismatched resources of Allure reports display (old files to new files)
